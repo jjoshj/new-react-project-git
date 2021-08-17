@@ -1,0 +1,135 @@
+
+.colorbutton{
+  display: grid;
+  gap: 1rem;
+  padding: 5%;
+}
+.tag{
+  opacity: 0.3;
+}
+.colorbuttontag{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.projectcard{
+  width: 100%;
+}
+.dashboard{
+  display: grid;
+  grid-template-columns: 1fr  ;
+  gap: 2rem;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover {
+  background-color: #555;
+  
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+
+
+@media (min-width: 600px){
+  .colorbutton{
+    
+    grid-template-columns: 1fr 1fr;
+    
+  }
+  .dashboard{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 2rem;
+  }
+  .bottomcard{
+  grid-row: span 2;
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+
+}
+.navebar{
+  position: fixed;
+}
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+ 
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #04AA6D;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
