@@ -8,17 +8,14 @@ import { ColorButtons } from './ColorButtons';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
-} from "react-router-dom";
+  Route} from "react-router-dom";
+import { Sidenave, Navebar } from './Navebar';
 
 
 function App() {
   return (
     <>
-     <Sidenave/>
-    
-   
+     <Mainnave/>
     </>
       
   );
@@ -41,48 +38,32 @@ function Dashboard() {
   );
 }
 
-function Sidenave(){
+function Mainnave(){
   return(
     <>
   <Router>
+    
     <div>
-      
-      <Navebar/>
-      
-      <div class="sidebar">
-      <a >welcome
-            </a>
-      
-            <a class="active" href="#home">
-              <Link to="/">Home</Link></a>
-           
-            <a href="#about">
-              <Link to="/about">About</Link></a>
-           
-            <a href="#Users">
-              <Link to="/users">Users</Link></a>
-      </div>
-    
-    
-      
-           
+     <Sidenave/> 
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+       
         <Switch>
           <Route path="/about">
             <h1>hai</h1>
           </Route>
+
           <Route path="/users">
           <div class="content">
           <Navebar/>
           <ColorButtons/>
   </div>
           </Route>
+
+
           <Route path="/">
          
           <div class="content">
-         
+          <Navebar/>
   < Dashboard/>
   </div>
           </Route>
@@ -93,16 +74,4 @@ function Sidenave(){
   );
 }
 
-function Navebar(){
-  return(
-    <div class="navbar">
-    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-    <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-  </div>
-  );
-}
-
- 
 export default App;
